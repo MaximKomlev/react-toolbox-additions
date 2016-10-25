@@ -15,20 +15,20 @@ const factory = (Input, Button) => {
         inline: React.PropTypes.bool,
         inputText: React.PropTypes.string,
         onFileChange: React.PropTypes.func,
-        path: React.PropTypes.string,
         theme: PropTypes.shape({
             button: PropTypes.string,
             filepicker: PropTypes.string,
             inline: React.PropTypes.string,
             input: PropTypes.string
-        })
+        }),
+        value: React.PropTypes.string
     };
 
     static defaultProps = {
         buttonText: 'BROWSE',
         inputText: '',
         className: '',
-        path: '',
+        value: '',
         inline: false
     }
 

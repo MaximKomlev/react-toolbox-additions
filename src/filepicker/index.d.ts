@@ -11,7 +11,7 @@ export interface FilePickerTheme {
    */
   input?: string;
   /**
-   * Used when the component is in line.
+   * Used for inline style of component.
    */
   inline?: string;
   /**
@@ -46,6 +46,10 @@ interface FilePickerProps extends ReactToolbox.Props {
    * Classnames object defining the component style.
    */
   theme?: FilePickerTheme;
+  /**
+   * This is initial value of input component.
+   */
+  value?: string
 }
 
 export class FilePicker extends React.Component<FilePickerProps, {}> { }

@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import FontIcon from 'react-toolbox/lib/font_icon';
 
 import FilePicker from '../../lib/filepicker';
 import style from '../style';

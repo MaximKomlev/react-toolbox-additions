@@ -1,63 +1,54 @@
 # Pager
 
-Provides functionality of pagination control, actually the component is not defined at(https://www.google.com/design/spec/components), but designed by using standart components from material design. 
+Provides functionality of filepicker control, actually the component is not defined at(https://www.google.com/design/spec/components), 
+but designed by using standard components from material design utilizing react-toolbox components library (http://react-toolbox.com/). 
 It is easy to use and configure, also it is highly customizable.
 
 <!-- example -->
 ```jsx
-import Pager from 'react-toolbox/lib/pager';
-import FontIcon from 'react-toolbox/lib/font_icon';
+import Pager from 'react-toolbox/lib/filepicker';
 
-const ProgressTest = () => {
+const FilePickerTest = () => {
 
-    var onPageChange = function (oldPage, newPage)
-    {
-        //server call to update content according current page
-        console.info("Previous page : " + oldPage + ", Selected page: " + newPage);
+    onChange (fobj, fname) {
+      console.info('Selected file : ' + fname);
     }
 
     return (
-      <Pager 
-        prevButtonContent={ (<FontIcon value='chevron_left' />) }
-        nextButtonContent={ (<FontIcon value='chevron_right' />) }
-        rangeLeftButtonContent={(<FontIcon value='more_horiz' />)}
-        rangeRightButtonContent={(<FontIcon value='more_horiz' />)}
-        lastPage={29}
-        currentPage={5}
-        visiblePagesBlockSize={3}
-        onPageChange={onPageChange}
-      />
+        <FilePicker
+            inline
+            raised 
+            primary
+            icon='folder_open'
+            buttonText={'BROWSE'}
+            inputText={'FILE 3'}
+            value={''}
+            onFileChange={this.onChange.bind(this)} 
+            />
   );
 };
 ```
 
-If you want to provide a theme via context, the component key is `RTPager`.
+If you want to provide a theme via context, the component key is `ERTFilePicker`.
 
 ## Properties
 
 | Name          | Type        | Default         | Description|
 |:-----|:-----|:-----|:-----|
-| `prevButtonContent`              | `String`    | `\u003C`            | Used for the previous button content.|
-| `nextButtonContent`              | `String`    | `\u003E`            | Used for the next button content.|
-| `rangeLeftButtonContent`         | `String`    | `...`               | Used for the left range button content.|
-| `rangeRightButtonContent`        | `String`    | `...`               | Used for the right range button content.|
-| `currentPage`                    | `Number`    | `1`                 | A Number with the currently selected page.|
-| `lastPage`                       | `Number`    | `1`                 | A Number of last page.|
-| `visiblePagesBlockSize`          | `Number`    | `3`                 | A Number of pages visible in control except next, previous and ranges buttons, the minimum value is 2.|
-| `onPageChange`                   | `Function`  |                     | Callback called when the page is changing.|
-| `theme`                          | `String`    |                     | Classnames object defining the component style.|
-| `pagerClassName`                 | `String`    |                     | This class will be applied to the root elemt.|
-| `leftRightArrowButtonTypes`      | `Object`    | {raised: true}      | Defining default style of next, previous buttons.|
-| `leftRightRangeButtonTypes`      | `Object`    | {flat: true}        | Defining default style of left, right range buttons.|
-| `pagesButtonTypes`               | `Object`    | {flat: true}        | Defining default style of regular page buttons.|
+| `className`       | `String`    | ``                  | This class will be applied to the root elemt.|
+| `buttonText`      | `String`    | `BROWSE`            | Used for the button text.|
+| `inputText`       | `String`    | ``                  | Used for the input default text.|
+| `inline`          | `boolean`   | false               | If true, the component will apear inline.|
+| `onFileChange`    | `Function`  |                     | Callback called when the input is changing.|
+| `theme`           | `String`    |                     | Classnames object defining the component style.|
+| `value`           | `String`    | ``                  | This is initial value of input component.|
 
 
 ## Theme
 
 | Name     | Description|
 |:---------|:-----------|
-| `pager` | Used for the root element.|
-| `active` | Used for the active page.|
-| `leftRightArrowButton` | Used for the next and previous page buttons.|
-| `leftRightRangeButton` | Used for the next and previous range pages buttons.|
-| `pagesButton` | Used for the regular page buttons.|
+| `filepicker` | Used for the root element.|
+| `input`      | Used for the input element.|
+| `inline`     | Used for inline style of component.|
+| `button`     | Used for the button element.|

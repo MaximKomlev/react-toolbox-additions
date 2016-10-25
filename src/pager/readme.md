@@ -1,6 +1,7 @@
 # Pager
 
-Provides functionality of pagination control, actually the component is not defined at(https://www.google.com/design/spec/components), but designed by using standart components from material design. 
+Provides functionality of pagination control, actually the component is not defined at(https://www.google.com/design/spec/components), 
+but designed by using standard components from material design utilizing react-toolbox components library (http://react-toolbox.com/). 
 It is easy to use and configure, also it is highly customizable.
 
 <!-- example -->
@@ -8,7 +9,7 @@ It is easy to use and configure, also it is highly customizable.
 import Pager from 'react-toolbox/lib/pager';
 import FontIcon from 'react-toolbox/lib/font_icon';
 
-const ProgressTest = () => {
+const PagerTest = () => {
 
     var onPageChange = function (oldPage, newPage)
     {
@@ -31,7 +32,7 @@ const ProgressTest = () => {
 };
 ```
 
-If you want to provide a theme via context, the component key is `RTPager`.
+If you want to provide a theme via context, the component key is `ERTPager`.
 
 ## Properties
 
