@@ -1,0 +1,16 @@
+$unit: 1rem !default;
+
+.card {
+  
+  box-sizing: border-box;
+  padding: $unit * 2;
+  margin-top: $unit * 0.75;
+  background-color: #f8f8f8;
+  border: 1px solid #f4f4f4;
+
+  .pager {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+}
