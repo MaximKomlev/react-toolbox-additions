@@ -30,7 +30,7 @@ class PagerTest extends React.Component {
     });
   }
 
-  onPageChange (newPage, oldPage) {
+  onPageChange = (newPage, oldPage) => {
     console.info('Selected page : ' + newPage + ', Previous page: ' + oldPage);
   }
 
