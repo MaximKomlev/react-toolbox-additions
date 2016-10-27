@@ -28,27 +28,27 @@ interface PagerProps extends ReactToolbox.Props {
   /**
    *  Used for the previous button content.
    */
-  prevButtonContent?: string;
+  prevButtonLabel?: string;
   /**
    * Used for the left range button content
    */
-  rangeLeftButtonContent?: string;
+  rangeLeftButtonLabel?: string;
   /**
    * Used for the right range button content
    */
-  rangeRightButtonContent?: string;
+  rangeRightButtonLabel?: string;
   /**
    * Used for the next button content
    */
-  nextButtonContent?: string;
+  nextButtonLabel?: string;
   /**
    * A Number with the currently selected page
    */
   currentPage?: number;
   /**
-   * A Number of last page.
+   * A Number of total pages.
    */
-  lastPage?: number;
+  totalPages?: number;
   /**
    * A Number of pages visible in control except next, previous and ranges buttons, the minimum value is 2.
    */
@@ -77,7 +77,7 @@ interface PagerProps extends ReactToolbox.Props {
    *    raised,
    *    toggle
    */
-  leftRightArrowButtonTypes?: object;
+  leftRightArrowButtonStyles?: object;
   /**
    * Defining default style of left, right range buttons. 
    * it can have following styles:
@@ -90,7 +90,7 @@ interface PagerProps extends ReactToolbox.Props {
    *    raised,
    *    toggle
    */
-  leftRightRangeButtonTypes?: object;
+  leftRightRangeButtonStyles?: object;
   /**
    * Defining default style of regular page buttons. 
    * it can have following styles:
@@ -103,7 +103,7 @@ interface PagerProps extends ReactToolbox.Props {
    *    raised,
    *    toggle
    */
-  pagesButtonTypes?: object;
+  pagesButtonStyles?: object;
 }
 
 export class Pager extends React.Component<PagerProps, {}> { }

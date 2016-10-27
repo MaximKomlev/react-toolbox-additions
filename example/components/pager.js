@@ -16,7 +16,7 @@ class PagerTest extends React.Component {
   }
 
   state = {
-    lastPage: 29,
+    totalPages: 29,
     currentPage: 5
   }
 
@@ -43,11 +43,11 @@ class PagerTest extends React.Component {
 
         <div className={style.pager}>
           <Pager
-              prevButtonContent={<FontIcon value='chevron_left' />}
-              nextButtonContent={<FontIcon value='chevron_right' />}
-              rangeLeftButtonContent={<FontIcon value='more_horiz' />}
-              rangeRightButtonContent={<FontIcon value='more_horiz' />}
-              lastPage={this.state.lastPage}
+              prevButtonLabel={<FontIcon value='chevron_left' />}
+              nextButtonLabel={<FontIcon value='chevron_right' />}
+              rangeLeftButtonLabel={<FontIcon value='more_horiz' />}
+              rangeRightButtonLabel={<FontIcon value='more_horiz' />}
+              totalPages={this.state.totalPages}
               currentPage={this.state.currentPage}
               visiblePagesBlockSize={this.props.visiblePagesBlockSize}
               onPageChange={this.onPageChange}
@@ -56,8 +56,8 @@ class PagerTest extends React.Component {
 
         <Input
           type='number'
-          value={this.state.lastPage}
-          label='Last Page' onChange={this.onInputChange.bind(this, 'lastPage')}
+          value={this.state.totalPages}
+          label='Last Page' onChange={this.onInputChange.bind(this, 'totalPages')}
         />
 
       </section>
