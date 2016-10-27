@@ -30,7 +30,11 @@ class PagerTest extends React.Component {
     });
   }
 
-  onPageChange = (newPage, oldPage) => {
+  onPageChange1 = (newPage, oldPage) => {
+    console.info('Selected page : ' + newPage + ', Previous page: ' + oldPage);
+  }
+
+  onPageChange2 = (newPage, oldPage) => {
     console.info('Selected page : ' + newPage + ', Previous page: ' + oldPage);
   }
 
@@ -39,7 +43,7 @@ class PagerTest extends React.Component {
     return (
       <section>
         <h5>Pager</h5>
-        <p>Pager based on ToolBox components.</p>
+        <p>Pager based on ToolBox components with default button styles.</p>
 
         <div className={style.pager}>
           <Pager
@@ -50,7 +54,25 @@ class PagerTest extends React.Component {
               totalPages={this.state.totalPages}
               currentPage={this.state.currentPage}
               visiblePagesBlockSize={this.props.visiblePagesBlockSize}
-              onPageChange={this.onPageChange}
+              onPageChange={this.onPageChange1}
+          />
+        </div>
+
+        <h5>Pager</h5>
+        <p>Pager based on ToolBox components with custom button styles.</p>
+
+        <div className={style.pager}>
+          <Pager
+              prevButtonLabel={<FontIcon value='chevron_left' />}
+              nextButtonLabel={<FontIcon value='chevron_right' />}
+              rangeLeftButtonLabel={<FontIcon value='more_horiz' />}
+              rangeRightButtonLabel={<FontIcon value='more_horiz' />}
+              leftRightArrowButtonStyles={{flat: true, primary: true}}
+              leftRightRangeButtonStyles={{primary: true}}
+              totalPages={this.state.totalPages}
+              currentPage={this.state.currentPage}
+              visiblePagesBlockSize={this.props.visiblePagesBlockSize}
+              onPageChange={this.onPageChange2}
           />
         </div>
 
