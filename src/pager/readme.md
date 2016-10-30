@@ -11,10 +11,8 @@ import FontIcon from 'react-toolbox-additions/lib/font_icon';
 
 const PagerTest = () => {
 
-    var onPageChange = function (oldPage, newPage)
-    {
-        //server call to update content according current page
-        console.info("Previous page : " + oldPage + ", Selected page: " + newPage);
+    onPageChange = (newPage, oldPage) => {
+      console.info('Selected page : ' + newPage + ', Previous page: ' + oldPage);
     }
 
     return (
