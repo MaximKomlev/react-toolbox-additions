@@ -12,6 +12,7 @@ const factory = (Input, Button) => {
     static propTypes = {
         buttonText: React.PropTypes.string,
         className: React.PropTypes.string,
+        filename: React.PropTypes.string,
         inline: React.PropTypes.bool,
         inputText: React.PropTypes.string,
         onFileChange: React.PropTypes.func,
@@ -20,13 +21,12 @@ const factory = (Input, Button) => {
             filepicker: PropTypes.string,
             inline: React.PropTypes.string,
             input: PropTypes.string
-        }),
-        filename: React.PropTypes.string
+        })
     };
 
     static defaultProps = {
         buttonText: 'BROWSE',
-        inputText: '',
+        inputText: 'SELECT FILE',
         className: '',
         filename: '',
         inline: false
@@ -61,7 +61,8 @@ const factory = (Input, Button) => {
     };
 
     render() {
-        const { className, buttonText, inputText, inline, disabled, theme, label, filename, onFileChange, onChange, onClick, readOnly, ...other } = this.props;
+        const { className, buttonText, inputText, inline, disabled, theme, label, 
+                filename, onFileChange, onChange, onClick, readOnly, type, ...other } = this.props;
         const css = inline ? 'inline' : null;
 
         return (
@@ -74,16 +75,14 @@ const factory = (Input, Button) => {
                     value={this.state.filename}
                     />
                 <Button
-                    className={classnames(theme.button)}
+                    className={classnames(theme.button, theme.iefix)}
                     onChange={this.handlerBrowse}
                     disabled={disabled}
                     label={buttonText}
                     {...other}
                     />
             </div>
-        );
-    }
-
+        );}
     }
     return FilePicker;
 };

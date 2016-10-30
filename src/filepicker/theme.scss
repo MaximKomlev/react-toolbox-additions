@@ -24,4 +24,12 @@
       }
     }
   }
+
+  /*ie fix*/
+  .iefix {
+    input {
+      top: 0 !important;
+      left: 0 !important;
+    }
+  }
 }
