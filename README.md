@@ -12,7 +12,6 @@ React Toolbox can be installed as an [npm package](https://www.npmjs.org/package
 ```bash
 $ npm install react-toolbox-additions
 ```
-
 ## Prerequisites
 
 React Toolbox Additions require uses [react-toolbox](https://www.npmjs.com/package/react-toolbox) components library and [react] (https://www.npmjs.com/package/react).
@@ -39,8 +38,8 @@ const PagerTest = () => {
 
     return (
       <Pager 
-        prevButtonLabel={ (<FontIcon value='chevron_left' />) }
-        nextButtonLabel={ (<FontIcon value='chevron_right' />) }
+        prevButtonLabel={(<FontIcon value='chevron_left' />)}
+        nextButtonLabel={(<FontIcon value='chevron_right' />)}
         rangeLeftButtonLabel={(<FontIcon value='more_horiz' />)}
         rangeRightButtonLabel={(<FontIcon value='more_horiz' />)}
         totalPages={29}

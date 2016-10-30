@@ -49,7 +49,7 @@ interface FilePickerProps extends ReactToolbox.Props {
   /**
    * This is initial value of input component.
    */
-  value?: string
+  filename?: string
 }
 
 export class FilePicker extends React.Component<FilePickerProps, {}> { }

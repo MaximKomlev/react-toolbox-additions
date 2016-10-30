@@ -32,14 +32,14 @@ class FilePickerTest extends React.Component {
           <FilePicker
               buttonText={'BROWSE'}
               inputText={'Select File'}
-              value={''}
+              filename={''}
               onFileChange={this.onChange1.bind(this)} />
 
           <FilePicker
               inline
               buttonText={'BROWSE'}
               inputText={'Select File'}
-              value={''}
+              filename={''}
               onFileChange={this.onChange2.bind(this)} />
 
           <FilePicker
@@ -49,7 +49,7 @@ class FilePickerTest extends React.Component {
               icon='folder_open'
               buttonText={'BROWSE'}
               inputText={'Select File'}
-              value={''}
+              filename={''}
               onFileChange={this.onChange3.bind(this)} />
 
         </div>

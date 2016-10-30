@@ -21,25 +21,25 @@ const factory = (Input, Button) => {
             inline: React.PropTypes.string,
             input: PropTypes.string
         }),
-        value: React.PropTypes.string
+        filename: React.PropTypes.string
     };
 
     static defaultProps = {
         buttonText: 'BROWSE',
         inputText: '',
         className: '',
-        value: '',
+        filename: '',
         inline: false
     }
 
     state = {
-        path: this.props.path 
+        filename: this.props.filename 
     }
 
     componentWillReceiveProps (nextProps) {
-      if (this.state.path !== nextProps.value) {
+      if (this.state.filename !== nextProps.filename) {
         this.setState({
-            path: nextProps.value
+            filename: nextProps.filename
         });
       }
     }
@@ -48,30 +48,30 @@ const factory = (Input, Button) => {
         let files = e.target.files;
         
         if (files && files.length) {
-            if (this.state.path !== files[0].name) {
+            if (this.state.filename !== files[0].name) {
                 if (this.props.onFileChange) {
                     this.props.onFileChange(files[0], files[0].name);
                 }
             }
 
             this.setState({
-                path: files[0].name
+                filename: files[0].name
             });
         }
     };
 
     render() {
-        const { className, buttonText, inputText, inline, disabled, theme, label, onChange, onClick, readOnly, ...other } = this.props;
+        const { className, buttonText, inputText, inline, disabled, theme, label, filename, onFileChange, onChange, onClick, readOnly, ...other } = this.props;
         const css = inline ? 'inline' : null;
 
         return (
             <div data-ext-react-toolbox='filepicker' className={classnames(theme.filepicker, className, [theme[css]])}>
                 <Input
                     readOnly
-                    className={classnames(theme.input, (this.state.path && this.state.path.length && inline ? [theme[css]] : null))}
+                    className={classnames(theme.input, (this.state.filename && this.state.filename.length && inline ? [theme[css]] : null))}
                     disabled={disabled}
                     label={inputText}
-                    value={this.state.path}
+                    value={this.state.filename}
                     />
                 <Button
                     className={classnames(theme.button)}
