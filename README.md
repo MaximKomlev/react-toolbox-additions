@@ -1,4 +1,4 @@
-# Additions components for react-toolbox components library
+# Additional components for react-toolbox components library
 
 The project provides additions for react-toolbox library (http://react-toolbox.com/),
 which are not defined at material design and therefore were not included to original react-toolbox components library,
