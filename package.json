@@ -8,12 +8,6 @@
     "name": "Maksim Komleu",
     "url": "https://github.com/MaximKomlev/react-toolbox-additions"
   },
-  "contributors": [
-    {
-      "name": "Max Komlev",
-      "email": "max_komlev@msn.com"
-    }
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MaximKomlev/react-toolbox-additions.git"
