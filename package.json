@@ -1,6 +1,6 @@
 {
   "name": "react-toolbox-additions",
-  "description": "The project provides additions for react-toolbox which are not defined at material design and because were not included to original react-toolbox components library but it could be useful to have.",
+  "description": "The project provides additions for react-toolbox which are not defined at material design and therefore were not included to original react-toolbox components library.",
   "homepage": "https://github.com/MaximKomlev/react-toolbox-additions",
   "version": "0.0.1",
   "main": "./lib",

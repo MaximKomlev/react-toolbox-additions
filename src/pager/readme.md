@@ -6,8 +6,8 @@ It is easy to use and configure, also it is highly customizable.
 
 <!-- example -->
 ```jsx
-import Pager from 'react-toolbox/lib/pager';
-import FontIcon from 'react-toolbox/lib/font_icon';
+import Pager from 'react-toolbox-additions/lib/pager';
+import FontIcon from 'react-toolbox-additions/lib/font_icon';
 
 const PagerTest = () => {
 
