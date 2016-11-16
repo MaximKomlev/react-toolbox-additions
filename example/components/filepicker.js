@@ -20,6 +20,10 @@ class FilePickerTest extends React.Component {
     console.info('Selected file3 : ' + fname);
   }
 
+  onChange4 (fobj, fname) {
+    console.info('Selected file4 : ' + fname);
+  }
+
   render () {
 
     return (
@@ -30,27 +34,28 @@ class FilePickerTest extends React.Component {
         <div className={style.filepicker}>
 
           <FilePicker
-              buttonText={'BROWSE'}
-              inputText={'Select File'}
-              filename={''}
-              onFileChange={this.onChange1.bind(this)} />
+              buttonProperties={{label: 'BROWSE'}}
+              inputProperties={{label: 'Select File'}}
+              value={'temp.txt'}
+              onChange={this.onChange1.bind(this)} />
 
           <FilePicker
               inline
-              buttonText={'BROWSE'}
-              inputText={'Select File'}
-              filename={''}
-              onFileChange={this.onChange2.bind(this)} />
+              buttonProperties={{label: 'BROWSE'}}
+              inputProperties={{label: 'Please Select File'}}
+              onChange={this.onChange2.bind(this)} />
 
           <FilePicker
               inline
-              raised 
-              primary
-              icon='folder_open'
-              buttonText={'BROWSE'}
-              inputText={'Select File'}
-              filename={''}
-              onFileChange={this.onChange3.bind(this)} />
+              buttonProperties={{label: 'BROWSE', raised: true, primary: true, icon: 'folder_open'}}
+              inputProperties={{label: 'Please Select File'}}
+              value={''}
+              onChange={this.onChange3.bind(this)} />
+
+          <FilePicker
+              buttonProperties={{label: 'BROWSE', raised: true, primary: true, icon: 'folder_open'}}
+              inputProperties={{hint: 'Please Select File', icon: 'folder_open' }}
+              onChange={this.onChange4.bind(this)} />
 
         </div>
 

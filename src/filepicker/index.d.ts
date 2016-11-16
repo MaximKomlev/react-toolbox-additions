@@ -26,13 +26,13 @@ interface FilePickerProps extends ReactToolbox.Props {
    */
   className?: string;
   /**
-   * This is button text.
+   * This is button base properties like: accent, disabled, icon, ...
    */
-  buttonText?: string
+  buttonProperties?: object
   /**
-   * This is input default text.
+   * This is input base properties like: hint, disabled, icon, ...
    */
-  inputText?: string
+  inputProperties?: object
   /**
    * If true, the component will apear inline.
    * @default false
@@ -41,7 +41,7 @@ interface FilePickerProps extends ReactToolbox.Props {
   /**
    * Callback called when the input is changing.
    */
-  onFileChange?: Function;
+  onChange?: Function;
   /**
    * Classnames object defining the component style.
    */
@@ -49,7 +49,7 @@ interface FilePickerProps extends ReactToolbox.Props {
   /**
    * This is initial value of input component.
    */
-  filename?: string
+  value?: string
 }
 
 export class FilePicker extends React.Component<FilePickerProps, {}> { }

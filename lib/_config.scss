@@ -1,3 +1,8 @@
 @import "~react-toolbox/lib/commons";
 
-$button-margin: 0 $unit *.5 0 0 !default;
+$indent: $unit *.5 !default;
+$button-margin: 0 $indent 0 0 !default;
+
+@mixin space-between {
+    margin-right: $indent;
+}

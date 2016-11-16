@@ -14,14 +14,12 @@
   }
 
   .input {
+    @include space-between;
     flex: 1;
-    margin: $button-margin;
     min-width: $input-min-width;
 
-    &.inline {
-      > label {
-        display: none !important;
-      }
+    & span:last-child {
+      opacity: 1 !important;
     }
   }
 

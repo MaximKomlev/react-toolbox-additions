@@ -16,15 +16,10 @@ const FilePickerTest = () => {
 
     return (
         <FilePicker
-            inline
-            raised 
-            primary
-            icon='folder_open'
-            buttonText={'BROWSE'}
-            inputText={'FILE 3'}
-            value={''}
-            onFileChange={this.onChange.bind(this)} 
-            />
+            buttonProperties={{label: 'BROWSE', raised: true, primary: true, icon: 'folder_open'}}
+            inputProperties={{hint: 'Please Select File', icon: 'folder_open' }}
+            value=''
+            onChange={this.onChange.bind(this)} />
   );
 };
 ```
@@ -35,13 +30,13 @@ If you want to provide a theme via context, the component key is `ERTFilePicker`
 
 | Name          | Type        | Default         | Description|
 |:-----|:-----|:-----|:-----|
-| `className`       | `String`    | ``                  | This class will be applied to the root elemt.|
-| `buttonText`      | `String`    | `BROWSE`            | Used for the button text.|
-| `inputText`       | `String`    | ``                  | Used for the input default text.|
-| `inline`          | `boolean`   | false               | If true, the component will apear inline.|
-| `onFileChange`    | `Function`  |                     | Callback called when the input is changing.|
-| `theme`           | `String`    |                     | Classnames object defining the component style.|
-| `value`           | `String`    | ``                  | This is initial value of input component.|
+| `className`           | `String`    | ``                      | This class will be applied to the root elemt.|
+| `buttonProperties`    | `String`    | {label: 'BROWSE'}       | This is button base properties like: accent, disabled, icon, ...|
+| `inputProperties`     | `String`    | {label: 'SELECT FILE'}  | This is input base properties like: hint, disabled, icon, ...|
+| `inline`              | `boolean`   | false                   | If true, the component will apear inline.|
+| `onChange`            | `Function`  |                         | Callback called when the input is changing.|
+| `theme`               | `String`    |                         | Classnames object defining the component style.|
+| `value`               | `String`    | ``                      | This is initial value of input component.|
 
 
 ## Theme

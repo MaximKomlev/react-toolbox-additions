@@ -9,37 +9,42 @@ import { FILEPICKER } from '../identifiers.js';
 const factory = (Input, Button) => {
   class FilePicker extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {value: props.value};
+    }
+
     static propTypes = {
-        buttonText: React.PropTypes.string,
-        className: React.PropTypes.string,
-        filename: React.PropTypes.string,
-        inline: React.PropTypes.bool,
-        inputText: React.PropTypes.string,
-        onFileChange: React.PropTypes.func,
+        buttonProperties: PropTypes.oneOf([PropTypes.bool, PropTypes.string]),
+        className: PropTypes.string,
+        inline: PropTypes.bool,
+        inputProperties: PropTypes.oneOf([PropTypes.bool, PropTypes.string, PropTypes.number]),
+        onChange: PropTypes.func,
         theme: PropTypes.shape({
             button: PropTypes.string,
             filepicker: PropTypes.string,
-            inline: React.PropTypes.string,
+            inline: PropTypes.string,
             input: PropTypes.string
-        })
+        }),
+        value: PropTypes.string
     };
 
     static defaultProps = {
-        buttonText: 'BROWSE',
-        inputText: 'SELECT FILE',
+        buttonProperties: {label: 'BROWSE'},
         className: '',
-        filename: '',
-        inline: false
+        inline: false,
+        inputProperties: {label: 'SELECT FILE'},
+        value: undefined
     }
 
     state = {
-        filename: this.props.filename 
+        value: this.props.value
     }
 
     componentWillReceiveProps (nextProps) {
-      if (this.state.filename !== nextProps.filename) {
+      if (this.state.value !== nextProps.value) {
         this.setState({
-            filename: nextProps.filename
+            value: nextProps.value
         });
       }
     }
@@ -48,38 +53,33 @@ const factory = (Input, Button) => {
         let files = e.target.files;
         
         if (files && files.length) {
-            if (this.state.filename !== files[0].name) {
-                if (this.props.onFileChange) {
-                    this.props.onFileChange(files[0], files[0].name);
+            if (this.state.value !== files[0].name) {
+                if (this.props.onChange) {
+                    this.props.onChange(files[0], files[0].name);
                 }
             }
 
             this.setState({
-                filename: files[0].name
+                value: files[0].name
             });
         }
-    };
+    }
 
     render() {
-        const { className, buttonText, inputText, inline, disabled, theme, label, 
-                filename, onFileChange, onChange, onClick, readOnly, type, ...other } = this.props;
+        const { className, buttonProperties, inputProperties, value, inline, theme } = this.props;
         const css = inline ? 'inline' : null;
 
         return (
             <div data-ext-react-toolbox='filepicker' className={classnames(theme.filepicker, className, [theme[css]])}>
                 <Input
-                    readOnly
-                    className={classnames(theme.input, (this.state.filename && this.state.filename.length && inline ? [theme[css]] : null))}
-                    disabled={disabled}
-                    label={inputText}
-                    value={this.state.filename}
+                    className={classnames(theme.input)}
+                    value={this.state.value}
+                    {...inputProperties}
                     />
                 <Button
                     className={classnames(theme.button, theme.iefix)}
                     onChange={this.handlerBrowse}
-                    disabled={disabled}
-                    label={buttonText}
-                    {...other}
+                    {...buttonProperties}
                     />
             </div>
         );}
