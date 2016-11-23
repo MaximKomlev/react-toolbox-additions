@@ -15,10 +15,10 @@ const factory = (Input, Button) => {
     }
 
     static propTypes = {
-        buttonProperties: PropTypes.oneOf([PropTypes.bool, PropTypes.string]),
+        buttonProperties: React.PropTypes.object,
         className: PropTypes.string,
         inline: PropTypes.bool,
-        inputProperties: PropTypes.oneOf([PropTypes.bool, PropTypes.string, PropTypes.number]),
+        inputProperties: React.PropTypes.object,
         onChange: PropTypes.func,
         theme: PropTypes.shape({
             button: PropTypes.string,
