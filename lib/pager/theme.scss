@@ -1,17 +1,12 @@
 @import "./config";
 
 .pager {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
+    vertical-align: middle;
 
     .leftRightArrowButton,
     .leftRightRangeButton,
     .pagesButton {
-        display: flex;
-        flex-shrink: 0;
-
         min-width: $button-height;
         margin: $button-margin;
     }

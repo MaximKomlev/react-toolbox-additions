@@ -2,20 +2,18 @@
 
 .filepicker {
 
-  position: relative;
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
+  > * {
+    display: inline-block;
+    vertical-align: middle;
+  }
 
   &.inline {
-    flex-flow: row nowrap !important;
-    justify-content: flex-start;
-    align-items: center;
+    display: inline-block;
+    vertical-align: middle;
   }
 
   .input {
     @include space-between;
-    flex: 1;
     min-width: $input-min-width;
 
     & span:last-child {
