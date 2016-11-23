@@ -2,6 +2,9 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+### Fixed
+- Fixed runtime react warning on filepicker component.
+
 ### Changed
 - Updated default layout of Pager component from flex to inline-block.
 - Updated default layout of FilePicker component from flex to inline-block.
