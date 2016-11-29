@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [Release 1.2.2] - 11/28/2016
+### Added
+- Missed file.
+
 ## [Release 1.2.1] - 11/28/2016
 ### Added
 - More examples of pager to use.
