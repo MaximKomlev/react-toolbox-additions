@@ -87,6 +87,11 @@ $ npm start
 
 Local example will be available at `http://localhost:8000/`.
 
+## Changes
+
+The log of changes is available [here](https://github.com/MaximKomlev/react-toolbox-additions/blob/master/changelog.md):
+
+
 ## License
 
 This project is licensed under the terms of the [MIT license](https://github.com/MaximKomlev/react-toolbox-additions/blob/master/LICENSE).
