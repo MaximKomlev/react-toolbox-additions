@@ -227,7 +227,7 @@ const factory = (Page) => {
             start = left;
             end = right;
 
-            currentBlock = Math.ceil(end / blockSize);
+            currentBlock = Math.ceil((totalPages - end === 1 ? totalPages : end ) / blockSize);
         }
 
         if (currentBlock === blocksNumber) { //adjustment set of buttons if current is on the right boundary

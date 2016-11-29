@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [unreleased] - 11/29/2016
+### Fixed
+- Adjasment of buttons number according to visibleBlockSize.
+
 ## [Release 1.2.2] - 11/28/2016
 ### Added
 - Missed file.
