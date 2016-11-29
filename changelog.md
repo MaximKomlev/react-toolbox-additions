@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [Release 1.2.4] - 11/29/2016
+### Added
+- Change log at readme.
+
 ## [Release 1.2.3] - 11/29/2016
 ### Added
 - Styling for first and last pages buttons.
