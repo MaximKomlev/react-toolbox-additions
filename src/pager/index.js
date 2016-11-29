@@ -1,10 +1,10 @@
 import { themr } from 'react-css-themr';
 import { PAGER } from '../identifiers.js';
 import { pagerFactory } from './pager.js';
-import { Button } from 'react-toolbox/lib/button';
+import Page from './page.js';
 import theme from './theme.scss';
 
-const Pager = pagerFactory(Button);
+const Pager = pagerFactory(Page);
 
 const ThemedPager = themr(PAGER, theme)(Pager);
 export default ThemedPager;

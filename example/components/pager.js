@@ -43,7 +43,7 @@ class PagerTest extends React.Component {
     return (
       <section>
         <h5>Pager</h5>
-        <p>Pager based on ToolBox components with default button styles.</p>
+        <p>Pager based on ToolBox components with default button styles. Example: 1.</p>
 
         <div className={style.pager}>
           <Pager
@@ -58,8 +58,7 @@ class PagerTest extends React.Component {
           />
         </div>
 
-        <h5>Pager</h5>
-        <p>Pager based on ToolBox components with custom button styles.</p>
+        <p>Pager based on ToolBox components with custom button styles. Example: 2.</p>
 
         <div className={style.pager}>
           <Pager
@@ -73,6 +72,43 @@ class PagerTest extends React.Component {
               currentPage={this.state.currentPage}
               visiblePagesBlockSize={this.props.visiblePagesBlockSize}
               onPageChange={this.onPageChange2}
+          />
+        </div>
+
+        <p>Pager based on ToolBox components with custom button styles. Example: 3.</p>
+
+        <div className={style.pager}>
+          <Pager
+              prevButtonLabel={<FontIcon value='chevron_left' />}
+              nextButtonLabel={<FontIcon value='chevron_right' />}
+              rangeLeftButtonLabel={<FontIcon value='more_horiz' />}
+              rangeRightButtonLabel={<FontIcon value='more_horiz' />}
+              leftRightArrowButtonStyles={{ primary: true, raised: true }}
+              leftRightRangeButtonStyles={{ raised: true}}
+              pagesButtonStyles={{raised: true }}
+              totalPages={this.state.totalPages}
+              currentPage={this.state.currentPage}
+              visiblePagesBlockSize={this.props.visiblePagesBlockSize}
+              onPageChange={this.onPageChange2}
+          />
+        </div>
+
+        <p>Pager based on ToolBox components with custom theme. Example: 4.</p>
+
+        <div className={style.pager}>
+          <Pager
+              prevButtonLabel={<FontIcon value='chevron_left' />}
+              nextButtonLabel={<FontIcon value='chevron_right' />}
+              rangeLeftButtonLabel={<FontIcon value='more_horiz' />}
+              rangeRightButtonLabel={<FontIcon value='more_horiz' />}
+              leftRightArrowButtonStyles={{ primary: true, raised: true }}
+              leftRightRangeButtonStyles={{ raised: true}}
+              pagesButtonStyles={{raised: true }}
+              totalPages={this.state.totalPages}
+              currentPage={this.state.currentPage}
+              visiblePagesBlockSize={this.props.visiblePagesBlockSize}
+              onPageChange={this.onPageChange2}
+              theme={style}
           />
         </div>
 

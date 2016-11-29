@@ -12,5 +12,14 @@ $unit: 1rem !default;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
+
+    .active {
+        text-decoration: none;
+        color: #3f51b5;
+    }
+
+    .leftRightArrowButton{
+      display: none;
+    }
   }
 }
