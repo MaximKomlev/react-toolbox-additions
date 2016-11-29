@@ -1,7 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [unreleased] - 11/29/2016
+## [Release 1.2.3] - 11/29/2016
+### Added
+- Styling for first and last pages buttons.
+
 ### Fixed
 - Adjasment of buttons number according to visibleBlockSize.
 

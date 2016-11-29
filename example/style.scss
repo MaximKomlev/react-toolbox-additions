@@ -12,6 +12,7 @@ $unit: 1rem !default;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
+    margin: 1rem 0 1.5rem 0;
 
     .active {
         text-decoration: none;

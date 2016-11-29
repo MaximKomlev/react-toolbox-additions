@@ -11,7 +11,11 @@ export interface PagerTheme {
    */
   active?: string;
   /**
-   * Used for the next and previous page buttons.
+   * Used for the first and last page buttons.
+   */
+  firstLastPagesButton?: string;
+  /**
+   * Used for the next and previous arrow buttons.
    */
   leftRightArrowButton?: string;
   /**
@@ -65,6 +69,19 @@ interface PagerProps extends ReactToolbox.Props {
    * This class will be applied to the root elemt.
    */
   pagerClassName?: string;
+  /**
+   * Defining default style of first, last page buttons. 
+   * it can have following styles:
+   *    accent,
+   *    flat,
+   *    inverse,
+   *    mini,
+   *    neutral,
+   *    primary,
+   *    raised,
+   *    toggle
+   */
+  firstLastPagesButtonStyles?: object;
   /**
    * Defining default style of next, previous buttons. 
    * it can have following styles:

@@ -42,51 +42,54 @@ const factory = (Page) => {
     }
 
     static propTypes = {
-        currentPage: React.PropTypes.oneOfType([
-            React.PropTypes.string,
-            React.PropTypes.number
+        currentPage: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number
         ]).isRequired,
-        leftRightArrowButtonStyles: React.PropTypes.object,
-        leftRightRangeButtonStyles: React.PropTypes.object,
-        nextButtonLabel: React.PropTypes.oneOfType([
-            React.PropTypes.string,
-            React.PropTypes.element
+        firstLastPagesButtonStyles: PropTypes.object,
+        leftRightArrowButtonStyles: PropTypes.object,
+        leftRightRangeButtonStyles: PropTypes.object,
+        nextButtonLabel: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.element
         ]),
-        onPageChange: React.PropTypes.func,
+        onPageChange: PropTypes.func,
         pagerClassName: PropTypes.string,
-        pagesButtonStyles: React.PropTypes.object,
-        prevButtonLabel: React.PropTypes.oneOfType([
-            React.PropTypes.string,
-            React.PropTypes.element
+        pagesButtonStyles: PropTypes.object,
+        prevButtonLabel: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.element
         ]),
-        rangeLeftButtonLabel: React.PropTypes.oneOfType([
-            React.PropTypes.string,
-            React.PropTypes.element
+        rangeLeftButtonLabel: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.element
         ]),
-        rangeRightButtonLabel: React.PropTypes.oneOfType([
-            React.PropTypes.string,
-            React.PropTypes.element
+        rangeRightButtonLabel: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.element
         ]),
         theme: PropTypes.shape({
             pager: PropTypes.string,
             active: PropTypes.string,
+            firstLastPagesButton: PropTypes.string,
             leftRightArrowButton: PropTypes.string,
             leftRightRangeButton: PropTypes.string,
             pagesButton: PropTypes.string
         }),
-        totalPages: React.PropTypes.oneOfType([
-            React.PropTypes.string,
-            React.PropTypes.number
+        totalPages: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number
         ]).isRequired,
-        visiblePagesBlockSize: React.PropTypes.oneOfType([
-            React.PropTypes.string,
-            React.PropTypes.number
+        visiblePagesBlockSize: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number
         ]).isRequired
     }
 
     static defaultProps = {
         currentPage: initialCurrentPage,
         totalPages: initialCurrentPage,
+        firstLastPagesButtonStyles: {flat: true},
         leftRightArrowButtonStyles: {raised: true},
         leftRightRangeButtonStyles: {flat: true},
         nextButtonLabel: '\u003E',
@@ -134,6 +137,10 @@ const factory = (Page) => {
       }
     }
 
+    componentWillUnmount() {
+        this._pages.splice(0);
+    }
+
     componentDidMount() {
         this.updateState(this.state.currentPage, this.state.totalPages);
     }
@@ -152,11 +159,11 @@ const factory = (Page) => {
         const oldValue = this.state.currentPage;
         const newValue = page;
 
+        this.updateState(newValue);
+
         if (this.props.onPageChange) {
             this.props.onPageChange(newValue, oldValue);
         }
-
-        this.updateState(newValue);
     }
 
     handlerRangeClick (key) {
@@ -175,22 +182,22 @@ const factory = (Page) => {
             newValue = (sum >> 1) + (sum % 2); //rounding to right
         }
 
+        this.updateState(newValue);
+
         if (this.props.onPageChange) {
             this.props.onPageChange(newValue, curr);
         }
-
-        this.updateState(newValue);
     }
 
     handlerPrevNextClick (key, type) {
         const oldValue = this.state.currentPage;
         const newValue = key === prevPageId ? oldValue - 1 : oldValue + 1;
 
+        this.updateState(newValue);
+
         if (this.props.onPageChange) {
             this.props.onPageChange(newValue, oldValue);
         }
-
-        this.updateState(newValue);
     }
 
     //private methods
@@ -241,7 +248,7 @@ const factory = (Page) => {
         let buttonIdx = 0;
 
         if (currentBlock > 1 && (start - 1) > first) {
-            this.refs[buttonIdx].update(curr === first, first, String(first), BUTTON_TYPE.PAGE);
+            this.refs[buttonIdx].update(curr === first, first, String(first), BUTTON_TYPE.FLPAGE);
             ++buttonIdx;
 
             this.refs[buttonIdx].update(false, prevPageId, this.props.rangeLeftButtonLabel, BUTTON_TYPE.RANGE);
@@ -249,7 +256,11 @@ const factory = (Page) => {
         }
 
         for (let i = start; i <= last && i <= end; ++i) {
-            this.refs[buttonIdx].update(curr === i, i, String(i), BUTTON_TYPE.PAGE);
+            let bType = BUTTON_TYPE.PAGE;
+            if (i === first || i === last) {
+                bType = BUTTON_TYPE.FLPAGE;
+            }
+            this.refs[buttonIdx].update(curr === i, i, String(i), bType);
             ++buttonIdx;
         }
 
@@ -257,7 +268,7 @@ const factory = (Page) => {
             this.refs[buttonIdx].update(false, nextPageId, this.props.rangeRightButtonLabel, BUTTON_TYPE.RANGE);
             ++buttonIdx;
 
-            this.refs[buttonIdx].update(curr === last, last, String(last), BUTTON_TYPE.PAGE);
+            this.refs[buttonIdx].update(curr === last, last, String(last), BUTTON_TYPE.FLPAGE);
             ++buttonIdx;
         }
 
@@ -270,6 +281,8 @@ const factory = (Page) => {
 
     //rendering
     renderPages (currPage, totalPages) {
+        this._pages.splice(0);
+
         let curr = currPage;
         let last = totalPages < first ? first : totalPages;
         if (curr < first || curr > last) {
@@ -285,6 +298,7 @@ const factory = (Page) => {
         buttonsCount = buttonsCount > last ? last : buttonsCount;
 
         let possibleButtonClassNames = {};
+        possibleButtonClassNames[BUTTON_TYPE.FLPAGE] = classnames(this.props.theme.firstLastPagesButton);
         possibleButtonClassNames[BUTTON_TYPE.PAGE] = classnames(this.props.theme.pagesButton);
         possibleButtonClassNames[BUTTON_TYPE.RANGE] = classnames(this.props.theme.leftRightRangeButton);
         possibleButtonClassNames[BUTTON_TYPE.ARROW] = classnames(this.props.theme.leftRightArrowButton);
@@ -306,6 +320,7 @@ const factory = (Page) => {
         );
 
         let possibleButtoStyles = {};
+        possibleButtoStyles[BUTTON_TYPE.FLPAGE] = this.props.firstLastPagesButtonStyles;
         possibleButtoStyles[BUTTON_TYPE.PAGE] = this.props.pagesButtonStyles;
         possibleButtoStyles[BUTTON_TYPE.RANGE] = this.props.leftRightRangeButtonStyles;
         for (let i = 0; i < buttonsCount; ++i) {

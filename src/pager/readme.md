@@ -46,7 +46,8 @@ If you want to provide a theme via context, the component key is `ERTPager`.
 | `onPageChange`                    | `Function`  |                     | Callback called when the page is changing.|
 | `theme`                           | `String`    |                     | Classnames object defining the component style.|
 | `pagerClassName`                  | `String`    |                     | This class will be applied to the root elemt.|
-| `leftRightArrowButtonStyles`      | `Object`    | {raised: true}      | Defining default style of next and previous buttons.|
+| `firstLastPagesButtonStyles`      | `Object`    | {raised: true}      | Defining default style of first and last page buttons.|
+| `leftRightArrowButtonStyles`      | `Object`    | {raised: true}      | Defining default style of next and previous arrow buttons.|
 | `leftRightRangeButtonStyles`      | `Object`    | {flat: true}        | Defining default style of left and right range buttons.|
 | `pagesButtonStyles`               | `Object`    | {flat: true}        | Defining default style of regular pages buttons.|
 
@@ -57,6 +58,7 @@ If you want to provide a theme via context, the component key is `ERTPager`.
 |:---------|:-----------|
 | `pager`                 | Used for the root element.|
 | `active`                | Used for the active page.|
-| `leftRightArrowButton`  | Used for the next and previous pages buttons.|
+| `firstLastPagesButton`  | Used for the first and last arrow buttons.|
+| `leftRightArrowButton`  | Used for the next and previous arrow buttons.|
 | `leftRightRangeButton`  | Used for the next and previous range pages buttons.|
 | `pagesButton`           | Used for the regular pages buttons.|
