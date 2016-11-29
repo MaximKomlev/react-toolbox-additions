@@ -1,9 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+## [Release 1.2.1] - 11/28/2016
+### Added
+- More examples of pager to use.
+
 ### Fixed
 - Fixed runtime react warning on filepicker component.
+- Fixed ripple appearing on page button click.
 
 ### Changed
 - Updated default layout of Pager component from flex to inline-block.
