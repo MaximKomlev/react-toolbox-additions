@@ -87,9 +87,13 @@ $ npm start
 
 Local example will be available at `http://localhost:8000/`.
 
+## Components in bundle
+
+Currently the library implements Pager, FilePicker and Accordion components.
+
 ## Changes
 
-The log of changes is available [here](https://github.com/MaximKomlev/react-toolbox-additions/blob/master/changelog.md):
+The log of changes is available [here](https://github.com/MaximKomlev/react-toolbox-additions/blob/master/changelog.md).
 
 
 ## License

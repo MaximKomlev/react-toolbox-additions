@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [Release 1.3.0] - 12/05/2016
+### Added
+- Initial version of Accordion component.
+
 ## [Release 1.2.4] - 11/29/2016
 ### Added
 - Change log at readme.
