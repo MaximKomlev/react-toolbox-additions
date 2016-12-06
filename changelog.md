@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [Release 1.3.2] - 12/05/2016
+### Fixed
+- Chord icon styling.
+
 ## [Release 1.3.1] - 12/05/2016
 ### Fixed
 - Component resizing.
