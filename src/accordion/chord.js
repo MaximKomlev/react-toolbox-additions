@@ -47,9 +47,29 @@ class Chord extends Component {
   };
 
   //private methods
+  transitionEndEventName () {
+    let i,
+      undefined,
+      el = document.createElement('div'),
+      transitions = {
+          'transition':'transitionend',
+          'OTransition':'otransitionend',
+          'MozTransition':'transitionend',
+          'WebkitTransition':'webkitTransitionEnd'
+      };
+
+    for (i in transitions) {
+      if (transitions.hasOwnProperty(i) && el.style[i] !== undefined) {
+          return transitions[i];
+      }
+    }
+  }
+
   collapse() {
     let contentEl = ReactDOM.findDOMNode(this.refs[contentId]);
     if (contentEl) {
+      contentEl.style.height = getComputedStyle(contentEl).height;
+      contentEl.offsetHeight;
       contentEl.style.height = 0;
     }
   }
@@ -61,8 +81,16 @@ class Chord extends Component {
       contentEl.style.height = 'auto';
       let newHeight = getComputedStyle(contentEl).height;
       contentEl.style.height = initialHeight;
-      contentEl.offsetHeight; // to force update
+      contentEl.offsetHeight;
       contentEl.style.height = newHeight;
+
+      let self = this;
+      contentEl.addEventListener(this.transitionEndEventName(), function transitionEnd(event) {
+        if (self.state.active) { 
+          contentEl.style.height = 'auto';
+        }
+        contentEl.removeEventListener(self.transitionEndEventName(), transitionEnd, false);
+      }, false)
     }
   }
 
@@ -70,6 +98,8 @@ class Chord extends Component {
     window.addEventListener('resize', this.handleResize);
     if (this.props.active) {
       this.expand();
+    } else {
+      this.collapse();
     }
   }
 
@@ -81,9 +111,9 @@ class Chord extends Component {
 
   componentWillReceiveProps (nextProps) {
     this.state.active = nextProps.active;
-    if (nextProps.active) {
+    if (this.state.active) {
       this.expand();
-    } else if (!nextProps.active) {
+    } else {
       this.collapse();
     }
   }
@@ -102,6 +132,8 @@ class Chord extends Component {
   handleResize = () => {
     if (this.state.active) {
       this.expand();
+    } else {
+      this.collapse();
     }
   };
 

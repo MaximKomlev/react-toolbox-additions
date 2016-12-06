@@ -23,7 +23,8 @@
     "toolkit",
     "addons",
     "pager",
-    "filepicker"
+    "filepicker",
+    "accordion"
   ],
   "dependencies": {
     "core-js": "~2.4.0",

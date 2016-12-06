@@ -1,6 +1,6 @@
 # Additional components for react-toolbox components library
 
-[![npm version](https://img.shields.io/badge/npm-v1.3.2-blue.svg?style=flat-square)](https://www.npmjs.org/package/react-toolbox-additions)
+[![npm version](https://img.shields.io/badge/npm-v1.3.3-blue.svg?style=flat-square)](https://www.npmjs.org/package/react-toolbox-additions)
 
 The project provides additions for react-toolbox library (http://react-toolbox.com/),
 which are not defined at material design and therefore were not included to original react-toolbox components library,
@@ -24,7 +24,9 @@ The components can be customized via themes by using [react-css-themr](https://g
 
 ## Basic usage
 
-Here is example how to use:
+Examples how to use.
+
+Pager:
 
 ```js
 import Pager from 'react-toolbox-additions/lib/pager';
@@ -51,6 +53,102 @@ const PagerTest = () => {
 };
 ```
 
+Accordion:
+
+```jsx
+import React, { PropTypes } from 'react';
+import FontIcon from 'react-toolbox/lib/font_icon';
+import Input from 'react-toolbox/lib/input';
+import {Button} from 'react-toolbox/lib/button';
+import { ListCheckbox, ListSubHeader, List, ListItem, ListDivider, ListItemText, ListItemContent } from 'react-toolbox/lib/list';
+
+import { Accordion, Chord } from 'react-toolbox-additions/lib/accordion';
+import style from '../style';
+
+class AccordionTest extends React.Component {
+
+  static propTypes = {
+  };
+
+  static defaultProps = {
+  }
+
+  state = {
+    index: 0
+  }
+
+  onChange = (idx) => {
+    this.setState({
+      index: idx
+    });
+  }
+
+  onActive1 = () => {
+    console.info('Selected chord: ' + this.state.index);
+  }
+
+  onActive2 = () => {
+    console.info('Selected chord: ' + this.state.index);
+  }
+
+  onActive3 = () => {
+    console.info('Selected chord: ' + this.state.index);
+  }
+
+  render () {
+
+    return (
+      <Accordion
+        className={style.accordion}
+        index={this.state.index}
+        onChange={this.onChange}
+      >
+        <Chord
+          label='Number One'
+          onActive={this.onActive1}
+        >
+          <div className={style['accordion-body2']}>
+            The project provides additions for react-toolbox which are not defined at material design and therefore were not included to original react-toolbox components library but it could be useful to have.
+          </div>
+        </Chord>
+        <Chord
+          labelIcon={<FontIcon value='build' />}
+          label='Number Two'
+          onActive={this.onActive2}
+        >
+          <div className={style['accordion-body1']} >
+            <Input
+              type='number'
+              value={1000}
+              label='Number'
+            />
+
+            <Button
+              label='Click Me'
+            />
+          </div>
+
+        </Chord>
+        <Chord
+          labelIcon={'view_list'}
+          label='Number Three'
+          labelPostIcon={this.state.index1 === 2 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
+          onActive={this.onActive3}
+        >
+          <List selectable ripple>
+            <ListSubHeader caption='Contacts' />
+            <ListItem caption='Inbox' leftIcon='inbox' />
+            <ListItem caption='Outbox' selectable={false} ripple={false} leftIcon='send' />
+            <ListItem caption='Trash' leftIcon='delete' />
+            <ListItem caption='Spam' leftIcon='report' />
+          </List>
+        </Chord>
+      </Accordion>
+    );
+  }
+}
+```
+
 Also important notice from authors of react-toolbox:
 "Take into account that any required style will be included in the final CSS so your final would include `Button` styles in this case. It's more convenient to import components this way (or with raw imports) because if you require from the project root, every stylesheet of React Toolbox will be included, even if you don't use it."
 
@@ -70,6 +168,8 @@ The project inherits the same style of component structures that is in react-too
 
 ```js
 import { Pager } from 'react-toolbox-additions/lib/pager';
+import { Accordion, Chord } from 'react-toolbox-additions/lib/accordion';
+import { FilePicker } from 'react-toolbox-additions/lib/filepicker';
 ```
 
 ## Authors and Contributors
@@ -94,7 +194,6 @@ Currently the library implements Pager, FilePicker and Accordion components.
 ## Changes
 
 The log of changes is available [here](https://github.com/MaximKomlev/react-toolbox-additions/blob/master/changelog.md).
-
 
 ## License
 
