@@ -47,24 +47,6 @@ class Chord extends Component {
   };
 
   //private methods
-  transitionEndEventName () {
-      var i,
-          undefined,
-          el = document.createElement('div'),
-          transitions = {
-              'transition':'transitionend',
-              'OTransition':'otransitionend',
-              'MozTransition':'transitionend',
-              'WebkitTransition':'webkitTransitionEnd'
-          };
-
-      for (i in transitions) {
-          if (transitions.hasOwnProperty(i) && el.style[i] !== undefined) {
-              return transitions[i];
-          }
-      }
-  }
-
   collapse() {
     let contentEl = ReactDOM.findDOMNode(this.refs[contentId]);
     if (contentEl) {
@@ -98,6 +80,7 @@ class Chord extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
+    this.state.active = nextProps.active;
     if (nextProps.active) {
       this.expand();
     } else if (!nextProps.active) {
@@ -134,12 +117,30 @@ class Chord extends Component {
       [theme.withPostIcon]: labelPostIcon
     });
 
+    let lIcon = labelIcon;
+    if (lIcon && Object.prototype.toString.call(lIcon) !== '[object String]') {
+      React.cloneElement(labelIcon, {
+        className: theme.icon
+      });
+    } else if (labelIcon) {
+      lIcon = <FontIcon className={theme.icon} value={labelIcon}/>
+    }
+
+    let lpIcon = labelPostIcon;
+    if (lpIcon && Object.prototype.toString.call(lpIcon) !== '[object String]') {
+      React.cloneElement(labelPostIcon, {
+        className: theme.postIcon
+      });
+    } else if (labelPostIcon) {
+      lpIcon = <FontIcon className={theme.postIcon} value={labelPostIcon}/>
+    }
+
     return (
       <div id={id} key={key} data-react-toolbox='chord' className={classnames(className, theme.chord, {[theme.active]: active}, {[theme.hidden]: hidden}, {[theme.disabled]: disabled})}>
         <label className={_className} onClick={this.handleClick}>
-          {labelIcon && <FontIcon className={theme.icon} value={labelIcon}/>}
-          <span className={theme.text}>{label}</span>
-          {labelPostIcon && <FontIcon className={theme.postIcon} value={labelPostIcon}/> }
+          {lIcon}
+          <div className={theme.text}>{label}</div>
+          {lpIcon}
         </label>
         <div ref={contentId} className={classnames(theme.content, (!active ? theme.hidden : null))}>
           {children}

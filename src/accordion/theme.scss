@@ -40,6 +40,8 @@
     }
 
     &.active {
+      margin-bottom: 2 * $chord-content-padding;
+
       .content {
         opacity: 1;
         height: auto;
@@ -73,6 +75,7 @@
         height: $chord-icon-height;
         line-height: $chord-icon-height;
         vertical-align: top;
+        margin-right: $chord-content-padding;
       }
 
       .icon,
@@ -92,12 +95,11 @@
 
       &.withText {
         .icon {
-          margin-right: 1rem;
+          margin-right: $chord-content-padding;
         }
+      }
 
-        .postIcon {
-          float: right;
-        }
+      .postIcon {
       }
     }
   }

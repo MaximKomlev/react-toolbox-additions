@@ -66,7 +66,7 @@ class AccordionTest extends React.Component {
               </div>
             </Chord>
             <Chord
-              labelIcon={'build'}
+              labelIcon={<FontIcon value='build' />}
               label='Number Two'
               onActive={this.onActive2}
             >
@@ -118,7 +118,7 @@ class AccordionTest extends React.Component {
               </div>
             </Chord>
             <Chord
-              labelIcon={'build'}
+              labelIcon={<FontIcon value='build' />}
               label='Number Two'
             >
 

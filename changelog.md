@@ -1,6 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [Release 1.3.1] - 12/05/2016
+### Fixed
+- Component resizing.
+
+### Updated
+- Sample.
+
+### Changed
+- labelIcon and labelPostIcon properties to take value as component or string.
+
 ## [Release 1.3.0] - 12/05/2016
 ### Added
 - Initial version of Accordion component.
