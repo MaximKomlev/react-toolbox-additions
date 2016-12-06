@@ -23,4 +23,43 @@ $unit: 1rem !default;
       display: none;
     }
   }
+
+  .accordion {
+    
+    .chord {
+
+      border: 1px solid #f4f4f4;
+
+      .label {
+        border: none;
+      }
+
+      &.active {
+        .label {
+          border-bottom: 1px solid #f4f4f4;
+        }    
+      }
+
+      .content {
+        margin-left: 10;
+        margin-right: 10;
+      }
+    }
+    
+  }
+
+  .accordion-body1 {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+
+    > * {
+      flex: 1;
+    }
+  }
+
+  .accordion-body2 {
+    padding: 1rem;
+    padding-top: 0;
+  }
 }

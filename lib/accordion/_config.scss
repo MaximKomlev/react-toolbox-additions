@@ -1,0 +1,13 @@
+@import "~react-toolbox/lib/button/theme";
+@import "../config";
+
+$chord-content-padding: 1 * $unit !default;
+$chord-label-disabled-opacity: .2 !default;
+$chord-label-v-padding: 0.2 * $unit !default;
+$chord-label-height: 4.8 * $unit !default;
+$chord-icon-height: 2.4 * $unit !default;
+$chord-text-height: 1.4 * $unit !default;
+$chord-pointer-color: $color-primary !default;
+$chord-text: $color-black !default;
+$chord-text-color: $chord-text !default;
+$chord-text-inactive-color: rgba($chord-text, .7) !default;
