@@ -29,6 +29,7 @@
     "core-js": "~2.4.0",
     "classnames": "~2.2.5",
     "react": "~15.3.0",
+    "react-dom": "^15.3.0",
     "react-css-themr": "~1.4.1",
     "react-toolbox": "~1.2.3"
   },
