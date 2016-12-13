@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [Release 1.3.4] - 12/14/2016
+### Added
+- Chord icon and postIcon customization.
+
 ## [Release 1.3.3] - 12/06/2016
 ### Fixed
 - Chord resizing and content growing.

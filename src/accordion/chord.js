@@ -152,7 +152,7 @@ class Chord extends Component {
     let lIcon = labelIcon;
     if (lIcon && Object.prototype.toString.call(lIcon) !== '[object String]') {
       lIcon = React.cloneElement(labelIcon, {
-        className: theme.icon
+        className: classnames(labelIcon.props.className, theme.icon)
       });
     } else if (labelIcon) {
       lIcon = <FontIcon className={theme.icon} value={labelIcon}/>
@@ -161,7 +161,7 @@ class Chord extends Component {
     let lpIcon = labelPostIcon;
     if (lpIcon && Object.prototype.toString.call(lpIcon) !== '[object String]') {
       lpIcon = React.cloneElement(labelPostIcon, {
-        className: theme.postIcon
+        className: classnames(labelPostIcon.props.className, theme.postIcon)
       });
     } else if (labelPostIcon) {
       lpIcon = <FontIcon className={theme.postIcon} value={labelPostIcon}/>
