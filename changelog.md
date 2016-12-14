@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [Release 1.3.5] - 12/14/2016
+### Updated
+- Dependencies.
+
 ## [Release 1.3.4] - 12/14/2016
 ### Added
 - Chord icon and postIcon customization.

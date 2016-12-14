@@ -1,6 +1,6 @@
 # Additional components for react-toolbox components library
 
-[![npm version](https://img.shields.io/badge/npm-v1.3.4-blue.svg?style=flat-square)](https://www.npmjs.org/package/react-toolbox-additions)
+[![npm version](https://img.shields.io/badge/npm-v1.3.5-blue.svg?style=flat-square)](https://www.npmjs.org/package/react-toolbox-additions)
 
 The project provides additions for react-toolbox library (http://react-toolbox.com/),
 which are not defined at material design and therefore were not included to original react-toolbox components library,
