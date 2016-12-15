@@ -3,7 +3,7 @@ import { FILEPICKER } from '../identifiers.js';
 import { filePickerFactory } from './filepicker.js';
 import { BrowseButton } from 'react-toolbox/lib/button';
 import { Input } from 'react-toolbox/lib/input';
-import theme from './theme.scss';
+import theme from './theme.css';
 
 const FilePicker = filePickerFactory(Input, BrowseButton);
 

@@ -5,7 +5,7 @@ import {Card} from 'react-toolbox/lib/card';
 import Pager from './components/pager';
 import FilePicker from './components/filepicker';
 import Accordion from './components/accordion';
-import style from './style';
+import style from './style.css';
 
 const Root = () => (
   <div>

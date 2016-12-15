@@ -1,0 +1,10 @@
+@import "react-toolbox/lib/commons.css";
+
+:root {
+    --indent: calc(var(--unit) * 0.5);
+    --button-margin: 0 var(--indent) 0 0;
+
+    @define-mixin space-between {
+        margin-right: var(--indent);
+    }
+}

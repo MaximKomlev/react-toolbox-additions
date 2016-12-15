@@ -1,4 +1,4 @@
-@import "./config";
+@import "./config.css";
 
 .filepicker {
 
@@ -13,8 +13,8 @@
   }
 
   .input {
-    @include space-between;
-    min-width: $input-min-width;
+    @mixin space-between;
+    min-width: var(--input-min-width);
 
     & span:last-child {
       opacity: 1 !important;

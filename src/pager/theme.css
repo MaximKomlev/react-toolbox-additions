@@ -1,4 +1,4 @@
-@import "./config";
+@import "./config.css";
 
 .pager {
     display: inline-block;
@@ -8,8 +8,8 @@
     .leftRightArrowButton,
     .leftRightRangeButton,
     .pagesButton {
-        min-width: $button-height;
-        margin: $button-margin;
+        min-width: var(--button-height);
+        margin: var(--button-margin);
     }
 
     .active {

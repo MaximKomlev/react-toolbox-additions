@@ -1,4 +1,4 @@
-@import "./config";
+@import "./config.css";
 
 .accordion {
   position: relative;
@@ -24,7 +24,7 @@
     }
 
     &.disabled {
-      opacity: $chord-label-disabled-opacity;
+      opacity: var(--chord-label-disabled-opacity);
       .label {
         cursor: default;
       }
@@ -36,55 +36,55 @@
       box-sizing: border-box;
       overflow: hidden;
       opacity: 0;
-      transition: height $animation-duration ease-in-out, opacity $animation-duration linear;
+      transition: height var(--animation-duration) ease-in-out, opacity var(--animation-duration) linear;
     }
 
     &.active {
-      margin-bottom: 2 * $chord-content-padding;
+      margin-bottom: 2 * var(--chord-content-padding);
 
       .content {
         opacity: 1;
         height: auto;
-        transition: height $animation-duration ease-in-out, opacity $animation-duration linear;
+        transition: height var(--animation-duration) ease-in-out, opacity var(--animation-duration) linear;
       }
 
       .label {
-        color: $chord-pointer-color;
-        margin-bottom: $chord-content-padding;
+        color: var(--chord-pointer-color);
+        margin-bottom: var(--chord-content-padding);
       }    
     }
 
     .label {
       display: block;
       width: 100%;
-      font-size: $chord-text-height;
-      font-weight: $font-weight-semi-bold;
-      padding-top: $chord-label-v-padding;
-      padding-bottom: $chord-label-v-padding;
+      font-size: var(--chord-text-height);
+      font-weight: var(--font-weight-semi-bold);
+      padding-top: var(--chord-label-v-padding);
+      padding-bottom: var(--chord-label-v-padding);
       margin-bottom: 0;
-      color: $chord-text-color;
+      color: var(--chord-text-color);
       text-transform: uppercase;
-      transition-timing-function: $animation-curve-default;
-      transition-duration: $animation-duration;
+      transition-timing-function: var(--animation-curve-default);
+      transition-duration: var(--animation-duration);
       transition-property: box-shadow, color;
       cursor: pointer;
 
       .text {
         position: relative;
         display: inline-block;
-        height: $chord-icon-height;
-        line-height: $chord-icon-height;
+        height: var(--chord-icon-height);
+        line-height: var(--chord-icon-height);
         vertical-align: top;
-        margin-right: $chord-content-padding;
+        margin-right: var(--chord-content-padding);
       }
 
       .icon,
       .postIcon {
         position: relative;
         display: inline-block;
-        height: $chord-icon-height;
-        width: $chord-icon-height;
-        line-height: $chord-icon-height;
+        height: var(--chord-icon-height);
+        width: var(--chord-icon-height);
+        line-height: var(--chord-icon-height);
       }
 
       &.withIcon {
@@ -95,7 +95,7 @@
 
       &.withText {
         .icon {
-          margin-right: $chord-content-padding;
+          margin-right: var(--chord-content-padding);
         }
       }
 

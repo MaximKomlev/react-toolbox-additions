@@ -158,10 +158,10 @@ The project inherits the same style of component structures that is in react-too
 ```
  |- /pager
  |---- pager.js
- |---- _config.scss
+ |---- config.css
  |---- index.js
  |---- readme.md
- |---- theme.scss
+ |---- theme.css
 ```
 
 ### Bundled component
