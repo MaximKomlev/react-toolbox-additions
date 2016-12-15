@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
 import FilePicker from '../../lib/filepicker';
-import style from '../style';
+import style from '../style.css';
 
 class FilePickerTest extends React.Component {
 

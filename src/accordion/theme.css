@@ -7,14 +7,14 @@
   display: block;
 
   &.disableAnimation {
-    .chord {
+    > .chord {
       .content {
         transition: none !important;
       }
     }
   }
 
-  .chord {
+  > .chord {
     position: relative;
     width: 100%;
     display: block;
@@ -25,7 +25,7 @@
 
     &.disabled {
       opacity: var(--chord-label-disabled-opacity);
-      .label {
+      > .label {
         cursor: default;
       }
     }

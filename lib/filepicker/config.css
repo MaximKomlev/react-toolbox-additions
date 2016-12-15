@@ -540,5 +540,5 @@ p {
     --button-margin: 0 var(--indent) 0 0
 }
 :root {
-    --input-min-width: calc(4 * var(--indent));
+    --input-min-width: calc(4 * var(--unit));
 }

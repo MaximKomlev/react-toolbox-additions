@@ -1,12 +1,12 @@
 @import "../config.css";
 
 :root {
-    --chord-content-padding: calc(1 * var(--indent));
+    --chord-content-padding: calc(1 * var(--unit));
     --chord-label-disabled-opacity: 0.2;
-    --chord-label-v-padding: calc(0.2 * var(--indent));
-    --chord-label-height: calc(4.8 * var(--indent));
-    --chord-icon-height: calc(2.4 * var(--indent));
-    --chord-text-height: calc(1.4 * var(--indent));
+    --chord-label-v-padding: calc(0.2 * var(--unit));
+    --chord-label-height: calc(4.8 * var(--unit));
+    --chord-icon-height: calc(2.4 * var(--unit));
+    --chord-text-height: calc(1.4 * var(--unit));
     --chord-pointer-color: var(--color-primary);
     --chord-text: var(--color-black);
     --chord-text-color: var(--chord-text);

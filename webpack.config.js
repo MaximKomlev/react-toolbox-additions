@@ -1,45 +1,50 @@
 const pkg = require('./package');
-const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
+const autoprefixer = require('autoprefixer');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   context: __dirname,
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'source-map',
   entry: [
-    'webpack-hot-middleware/client',
-    './example/index.js'
+    'babel-polyfill',
+    './example'
   ],
   output: {
-    path: path.join(__dirname, 'build'),
-    filename: 'example.js',
-    publicPath: '/build/'
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: './'
   },
   resolve: {
-    extensions: ['', '.css', '.js', '.json'],
+    extensions: ['', '.scss', '.js', '.jsx', '.json'],
+    modulesDirectories: [
+      'node_modules',
+      path.resolve(__dirname, './node_modules')
+    ],
     packageMains: ['browser', 'web', 'browserify', 'main', 'style']
   },
+  resolveLoader: { fallback: path.join(__dirname, "node_modules") },
   module: {
     loaders: [
       {
-      test: /\.js$/,
-      loader: 'babel',
-      include: [path.join(__dirname, './lib'), path.join(__dirname, './example')]
-    }, {
-      test: /\.css$/,
-      include: /node_modules/,
-      loader: ExtractTextPlugin.extract('style', 'css')
-    }, {
-      test: /\.css$/,
-      include: [path.join(__dirname, './lib'), path.join(__dirname, './example')],
-      loader: ExtractTextPlugin.extract('style', 'css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss')
-    }]
+        test: /\.(js|jsx)$/,
+        loader: 'babel',
+        exclude: [/(node_modules)/],
+        query: {                                                                                                                                                                           
+          presets: ['es2015', 'stage-0', 'react']                                                                                                                                          
+        }                                                                                                                                                                                  
+      }, {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style', 'css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss')
+      }
+    ]
   },
   postcss () {
     return [
       require('postcss-import')({
-        root: __dirname,
-        path: [path.join(__dirname, './lib')]
+        root: __dirname
       }),
       require('postcss-mixins')(),
       require('postcss-each')(),
@@ -54,6 +59,9 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development'),
       VERSION: JSON.stringify(pkg.version)
+    }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'example/index.html')
     })
   ]
 };

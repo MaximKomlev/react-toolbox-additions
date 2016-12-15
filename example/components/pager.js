@@ -3,7 +3,7 @@ import FontIcon from 'react-toolbox/lib/font_icon';
 import Input from 'react-toolbox/lib/input';
 
 import Pager from '../../lib/pager';
-import style from '../style';
+import style from '../style.css';
 
 class PagerTest extends React.Component {
 

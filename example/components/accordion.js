@@ -5,7 +5,7 @@ import {Button} from 'react-toolbox/lib/button';
 import { ListCheckbox, ListSubHeader, List, ListItem, ListDivider, ListItemText, ListItemContent } from 'react-toolbox/lib/list';
 
 import {Accordion, Chord} from '../../lib/accordion';
-import style from '../style';
+import style from '../style.css';
 
 class AccordionTest extends React.Component {
 
