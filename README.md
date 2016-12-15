@@ -180,6 +180,8 @@ Steps to build project and run example locally.
 
 ```
 $ git clone https://github.com/MaximKomlev/react-toolbox-additions.git
+$ git checkout postcss --track
+$ git pull origin postcss
 $ npm install
 $ npm run build
 $ npm start
