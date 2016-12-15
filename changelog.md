@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [Release 2.0.0-beta] - 12/15/2016
+### Added
+- Support react-toolbox v2.0.0 beta
+
 ## [Release 1.3.6] - 12/14/2016
 ### Updated
 - Exported components.
