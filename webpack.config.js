@@ -44,7 +44,8 @@ module.exports = {
   postcss () {
     return [
       require('postcss-import')({
-        root: __dirname
+        root: __dirname,
+        path: [path.join(__dirname, './lib'), path.join(__dirname, './example'), path.join(__dirname, './dist')]
       }),
       require('postcss-mixins')(),
       require('postcss-each')(),

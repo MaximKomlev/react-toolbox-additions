@@ -6,15 +6,19 @@
   width: 100%;
   display: block;
 
-  &.disableAnimation {
-    > .chord {
-      .content {
+  &.disabledAnimation {
+    & .chord {
+      & > .content {
+        transition: none !important;
+      }
+
+      & > .label {
         transition: none !important;
       }
     }
   }
 
-  > .chord {
+  & > .chord {
     position: relative;
     width: 100%;
     display: block;
@@ -25,12 +29,12 @@
 
     &.disabled {
       opacity: var(--chord-label-disabled-opacity);
-      > .label {
+      & > .label {
         cursor: default;
       }
     }
 
-    .content {
+    & > .content {
       position: relative;
       height: 0;
       box-sizing: border-box;
@@ -42,19 +46,19 @@
     &.active {
       margin-bottom: 2 * var(--chord-content-padding);
 
-      .content {
+      & > .content {
         opacity: 1;
         height: auto;
         transition: height var(--animation-duration) ease-in-out, opacity var(--animation-duration) linear;
       }
 
-      .label {
+      & > .label {
         color: var(--chord-pointer-color);
         margin-bottom: var(--chord-content-padding);
       }    
     }
 
-    .label {
+    & > .label {
       display: block;
       width: 100%;
       font-size: var(--chord-text-height);
@@ -69,7 +73,7 @@
       transition-property: box-shadow, color;
       cursor: pointer;
 
-      .text {
+      & > .text {
         position: relative;
         display: inline-block;
         height: var(--chord-icon-height);
@@ -78,8 +82,8 @@
         margin-right: var(--chord-content-padding);
       }
 
-      .icon,
-      .postIcon {
+      & > .icon,
+      & > .postIcon {
         position: relative;
         display: inline-block;
         height: var(--chord-icon-height);
@@ -94,12 +98,9 @@
       }
 
       &.withText {
-        .icon {
+        & > .icon {
           margin-right: var(--chord-content-padding);
         }
-      }
-
-      .postIcon {
       }
     }
   }

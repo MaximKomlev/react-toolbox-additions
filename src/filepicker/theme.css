@@ -2,7 +2,7 @@
 
 .filepicker {
 
-  > * {
+  & > * {
     display: inline-block;
     vertical-align: middle;
   }
@@ -12,7 +12,7 @@
     vertical-align: middle;
   }
 
-  .input {
+  & > .input {
     @mixin space-between;
     min-width: var(--input-min-width);
 
@@ -22,8 +22,8 @@
   }
 
   /*ie fix*/
-  .iefix {
-    input {
+  & > .iefix {
+    & > input {
       top: 0 !important;
       left: 0 !important;
     }

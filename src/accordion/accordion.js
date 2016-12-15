@@ -60,7 +60,7 @@ const factory = (Chord) => {
     render () {
       const { className, disableAnimation, theme} = this.props;
       const classNames = classnames(theme.accordion, className, {
-        [theme.disableAnimation]: disableAnimation
+        [theme.disabledAnimation]: disableAnimation
       });
 
       return (

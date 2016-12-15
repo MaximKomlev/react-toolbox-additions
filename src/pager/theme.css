@@ -4,15 +4,15 @@
     display: inline-block;
     vertical-align: middle;
 
-    .firstLastPagesButton,
-    .leftRightArrowButton,
-    .leftRightRangeButton,
-    .pagesButton {
+    & > .firstLastPagesButton,
+    & > .leftRightArrowButton,
+    & > .leftRightRangeButton,
+    & > .pagesButton {
         min-width: var(--button-height);
         margin: var(--button-margin);
     }
 
-    .active {
+    & > .active {
         text-decoration: underline;
     }
 }

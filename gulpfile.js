@@ -17,6 +17,7 @@ gulp.task('css', function () {
     }),
     require('postcss-mixins')(),
     require('postcss-each')(),
+    require('postcss-cssnext')(),
     require('postcss-reporter')({ clearMessages: true })
   ];
 
