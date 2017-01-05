@@ -1,11 +1,10 @@
 # Additional components for react-toolbox components library
 
-[![npm version](https://img.shields.io/badge/npm-v1.3.8-blue.svg?style=flat-square)](https://www.npmjs.org/package/react-toolbox-additions)
+[![npm version](https://img.shields.io/badge/npm-v1.3.9-blue.svg?style=flat-square)](https://www.npmjs.org/package/react-toolbox-additions)
 
 The project provides additions for react-toolbox library (http://react-toolbox.com/),
 which are not defined at material design and therefore were not included to original react-toolbox components library,
-but it could be useful to have. For now it is just set of two components, Pager and FilePicker. 
-But I hope if the project will be intresting to somebody else I have a few more ideas about components.
+but it could be useful to have.
 
 ## Installation
 
@@ -16,7 +15,7 @@ $ npm install react-toolbox-additions
 ```
 ## Prerequisites
 
-React Toolbox Additions require uses [react-toolbox](https://www.npmjs.com/package/react-toolbox) components library and [react] (https://www.npmjs.com/package/react).
+React Toolbox Additions require uses [react-toolbox](https://www.npmjs.com/package/react-toolbox) components library and [react](https://www.npmjs.com/package/react).
 
 Like react-toolbox authors I also would recommend [webpack](https://webpack.github.io/) to use module bundler.
 
@@ -193,7 +192,7 @@ Currently the library implements Pager, FilePicker and Accordion components.
 
 ## Changes
 
-The log of changes is available [here](https://github.com/MaximKomlev/react-toolbox-additions/blob/master/changelog.md).
+[The log of changes](https://github.com/MaximKomlev/react-toolbox-additions/blob/master/changelog.md).
 
 ## License
 

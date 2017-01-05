@@ -1,6 +1,18 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [Release 1.3.9] - 01/05/2016
+### Updated
+- Fixed typing at readme.
+
+## [Release 1.3.8] - 01/04/2016
+### Updated
+- Fixed misversioning.
+
+## [Release 1.3.7] - 02/04/2016
+### Updated
+- To follow base project (react-toolbox).
+
 ## [Release 1.3.6] - 12/14/2016
 ### Updated
 - Exported components.
