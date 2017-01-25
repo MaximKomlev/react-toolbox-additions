@@ -1,4 +1,4 @@
-# Pager
+# FilePicker
 
 Provides functionality of filepicker control, actually the component is not defined at(https://www.google.com/design/spec/components), 
 but designed by using standard components from material design utilizing react-toolbox components library (http://react-toolbox.com/). 
@@ -6,7 +6,7 @@ It is easy to use and configure, also it is highly customizable.
 
 <!-- example -->
 ```jsx
-import Pager from 'react-toolbox-additions/lib/filepicker';
+import FilePicker from 'react-toolbox-additions/lib/filepicker';
 
 const FilePickerTest = () => {
 
