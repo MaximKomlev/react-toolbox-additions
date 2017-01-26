@@ -6,7 +6,7 @@ It is easy to use and configure, also it is highly customizable.
 
 <!-- example -->
 ```jsx
-import Pager from 'react-toolbox-additions/lib/filepicker';
+import FilePicker from 'react-toolbox-additions/lib/filepicker';
 
 const FilePickerTest = () => {
 
