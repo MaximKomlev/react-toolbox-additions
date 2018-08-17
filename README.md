@@ -171,6 +171,12 @@ import { Accordion, Chord } from 'react-toolbox-additions/lib/accordion';
 import { FilePicker } from 'react-toolbox-additions/lib/filepicker';
 ```
 
+## Screenshots
+
+<p align="center">
+<img src="./screenshots/rta.gif" width="400"/>
+</p>
+
 ## Authors and Contributors
 
 The project is being initially developed and maintained by [Max Komlev](https://github.com/MaximKomlev).
